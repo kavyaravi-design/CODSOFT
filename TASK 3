@@ -1,0 +1,175 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <!-- Display screen -->
+        <input type="text" id="display" disabled>
+        
+        <!-- Calculator buttons -->
+        <div class="buttons">
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn" onclick="setOperation('+')">+</button>
+            
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn" onclick="setOperation('-')">-</button>
+            
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn" onclick="setOperation('*')">*</button>
+            
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="clearDisplay()">C</button>
+            <button class="btn" onclick="calculateResult()">=</button>
+            <button class="btn" onclick="setOperation('/')">/</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+CSS
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+/* Calculator container */
+.calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 280px;
+}
+
+/* Display screen */
+#display {
+    width: 100%;
+    height: 50px;
+    font-size: 2em;
+    text-align: right;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button container (grid system) */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Button styling */
+.btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Special button styles */
+button:active {
+    background-color: #ccc;
+}
+
+JAVASCRIPT
+
+let currentInput = '';
+let previousInput = '';
+let operation = null;
+
+// Function to append numbers to the display
+function appendNumber(number) {
+    currentInput += number;
+    document.getElementById('display').value = currentInput;
+}
+
+// Function to clear the display
+function clearDisplay() {
+    currentInput = '';
+    previousInput = '';
+    operation = null;
+    document.getElementById('display').value = '';
+}
+
+// Function to set the operation (e.g., +, -, *, /)
+function setOperation(op) {
+    if (currentInput === '') return;
+    if (previousInput !== '') {
+        calculateResult();
+    }
+    operation = op;
+    previousInput = currentInput;
+    currentInput = '';
+}
+
+// Function to calculate the result
+function calculateResult() {
+    let result;
+    const prev = parseFloat(previousInput);
+    const current = parseFloat(currentInput);
+    
+    if (isNaN(prev) || isNaN(current)) return;
+    
+    switch (operation) {
+        case '+':
+            result = prev + current;
+            break;
+        case '-':
+            result = prev - current;
+            break;
+        case '*':
+            result = prev * current;
+            break;
+        case '/':
+            if (current === 0) {
+                result = 'Error';
+            } else {
+                result = prev / current;
+            }
+            break;
+        default:
+            return;
+    }
+
+    document.getElementById('display').value = result;
+    currentInput = result;
+    operation = null;
+    previousInput = '';
+}
