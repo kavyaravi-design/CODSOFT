@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1 class="logo">My Website</h1>
+      <nav>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Welcome to My Website</h2>
+      <p>Your solution for amazing things. Explore the features below.</p>
+      <a href="#features" class="cta-button">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="feature">
+        <h3>Fast & Reliable</h3>
+        <p>Our service is quick and dependable, ensuring top performance every time.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy to Use</h3>
+        <p>With a simple interface, you can get started without any hassle.</p>
+      </div>
+      <div class="feature">
+        <h3>24/7 Support</h3>
+        <p>We're here to help you anytime, anywhere. Our support team is always ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="contact">
+    <div class="container">
+      <p>Contact us at <a href="mailto:info@website.com">info@website.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+
+CSS
+/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+header .logo {
+  font-size: 24px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Hero Section Styles */
+.hero {
+  background-color: #008CBA;
+  color: white;
+  text-align: center
