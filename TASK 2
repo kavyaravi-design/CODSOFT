@@ -1,0 +1,248 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Your Name</h1>
+            <p class="tagline">Web Developer | Designer | Problem Solver</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <img src="your-photo.jpg" alt="Your Photo" class="profile-pic">
+            <p>Hello, I'm a passionate web developer with experience in creating responsive websites using HTML, CSS, and JavaScript. I specialize in front-end development, and I'm constantly learning new technologies to improve my skills.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Web Design</li>
+                <li>Git & GitHub</li>
+                <li>UI/UX Design</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project Title 1</h3>
+                <p>This is a brief description of the project. It was built using HTML, CSS, and JavaScript, and it focuses on responsive design.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project Title 2</h3>
+                <p>This project showcases my skills in front-end development and includes an interactive feature using JavaScript.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2>Resume</h2>
+            <p>Click the link below to download my resume:</p>
+            <a href="your-resume.pdf" class="download-link" download>Download My Resume</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch with me, feel free to send me an email or call:</p>
+            <p>Email: yourname@example.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+CSS
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+header .tagline {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* About Section */
+#about {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+#about p {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#skills ul {
+    list-style-type: none;
+}
+
+#skills ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+#projects {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.project {
+    display: inline-block;
+    width: 45%;
+    margin: 20px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+}
+
+.project h3 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.project p {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Resume Section */
+#resume {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.download-link {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 1.2em;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .project {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header .tagline {
+        font-size: 1em;
+    }
+
+    #skills ul li {
+        font-size: 1em;
+    }
+}
+
